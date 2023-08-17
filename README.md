@@ -1,1 +1,1 @@
-Handoverr Kit接入示例Demo工程
+Handover Kit接入示例Demo工程

@@ -1,0 +1,81 @@
+{
+  "Version": "1.03",
+  "Phone": [
+    {
+      "Policy": 1,
+      "Package": "com.example.handoverdemo",
+      "AppId":220839906,
+      "AppMarket": [
+        2
+      ],
+      "MinVersionCode": "1114360",
+      "MinVersion": "11.1.4.360"
+    },
+    {
+      "Policy": 1,
+      "Package": "com.example.padhandoverdemo",
+      "AppId":202206141,
+      "AppMarket": [
+        2
+      ],
+      "MinVersionCode": "1115360",
+      "MinVersion": "11.1.5.360"
+    }
+  ],
+  "Tablet": [
+    {
+      "Policy": 1,
+      "Package": "com.example.handoverdemo",
+      "AppId":220839906,
+      "AppMarket": [
+        2
+      ],
+      "MinVersionCode": "1114360",
+      "MinVersion": "11.1.4.360"
+    },
+    {
+      "Policy": 1,
+      "Package": "com.example.padhandoverdemo",
+      "AppId":202206141,
+      "AppMarket": [
+        2
+      ],
+      "MinVersionCode": "1115360",
+      "MinVersion": "11.1.5.360"
+    }
+  ],
+  "Tv": [
+    {
+      "Policy": 1,
+      "Package": "com.example.handoverdemo",
+      "AppId":220839906,
+      "AppMarket": [
+        2
+      ],
+      "MinVersionCode": "1114360",
+      "MinVersion": "11.1.4.360"
+    },
+    {
+      "Policy": 1,
+      "Package": "com.example.tvhandoverdemo",
+      "AppId":202206142,
+      "AppMarket": [
+        2
+      ],
+      "MinVersionCode": "1114460",
+      "MinVersion": "11.1.4.460"
+    }
+  ],
+  "Windows": [
+    {
+      "Policy": 1,
+      "ProcessName": "HandoverDemo.exe",
+      "AppId":220894498,
+      "AppMarket": [
+        0
+      ],
+      "MinVersionCode": "1114360",
+      "MinVersion": "11.1.4.360"
+    }
+  ]
+}

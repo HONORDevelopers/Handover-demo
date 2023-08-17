@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/info_textview"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="应用接续演示Demo" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="消息输入:" />
+
+        <EditText
+            android:id="@+id/input_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal">
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:onClick="onSendMsgBroadcastButtonClicked"
+            android:text="消息接续广播" />
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:onClick="onSendFileBroadcastButtonClicked"
+            android:text="文件接续广播" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal">
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:onClick="onSendStopBroadcastButtonClicked"
+            android:text="停止广播" />
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:onClick="onSendNormalMsgButtonClicked"
+            android:text="发送Normal MSG" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/notice_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="注意:\n1.点击消息接续广播，Sink端点击接续触点后Source端Demo会自动发送接续消息\n2.点击文件接续广播，Sink端点击接续触点后Source端Demo会自动发送接续文件\n3.测试图片已预置在Demo Apk中，不再需要手动push\n4.发送NormalMsg需要先进行一次接续操作" />
+    <ImageView
+        android:id="@+id/show_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

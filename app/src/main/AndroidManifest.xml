@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.handoverdemo">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:requestLegacyExternalStorage = "true"
+        android:theme="@style/Theme.HandoverDemo">
+
+        <!-- 设置本应用的AppId信息,应用需要在荣耀开发者网站上注册应用信息同时并申请接续服务的权限 -->
+        <meta-data android:name="com.hihonor.hcs.client.appid"
+            android:value="220839906" />
+
+        <!-- Sink端允许接续的Source端应用的AppId,若支持异包名接续此处可设置多个appId,
+        注意此处要与CONTINUITY_BROADCAST信令的eligibility字段内容对应 -->
+        <meta-data android:name="com.hihonor.handover.allowstart.appids"
+            android:value="220839906,220894498,202206141,202206142" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.handoverdemo.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <!-- 建议RecDataActivity只用于接收接续的数据/显示加载动画等，具体业务逻辑跳转其他的Activity进行处理 -->
+        <activity android:name="com.example.handoverdemo.RecDataActivity"
+            android:launchMode="singleInstance"
+            android:exported="true"
+            android:theme = "@android:style/Theme.Translucent.NoTitleBar"
+            android:permission="com.hihonor.handover.permission.HANDOVER_START_ACTIVITY">
+            <!-- ACTION_LAUNCH_APP 是非必需的action，当用户点击触点的时候接续框架会通过此action搜索并拉起应用的Activity，
+            若是不需要显示加载动画或者进行双端账号校验等操作则不需要配置此action -->
+            <intent-filter>
+                <action
+                    android:name="com.hihonor.handover.ACTION_LAUNCH_APP"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <!-- ACTION_APP_DATA_HANDOVER是必需的action，当接续框架收到ContinuityMsg或者ContinuityFile之后
+            会通过此action搜索并拉起应用的Activity -->
+            <intent-filter>
+                <action
+                    android:name="com.hihonor.handover.ACTION_APP_DATA_HANDOVER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.handoverdemo.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:exported="true"
+            android:theme="@style/Theme.HandoverDemo.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

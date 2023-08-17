@@ -1,0 +1,5 @@
+local.properties
+.gradle/
+.idea/
+apk_static_library.xml
+build/
